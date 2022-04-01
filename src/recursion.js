@@ -9,16 +9,23 @@
 var factorial = function(n) {
   if (n < 0) {
     return null;
-  } if (n === 1 || n === 0) {
-    return 1;
-  } else {
-    return (n * factorial(n-1));
   }
+  if (n === 1 || n === 0)  {
+    return 1;
+  }
+  return (n * factorial(n-1));
 };
 
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
+  if (typeof(array) === 'number') {
+    return array;
+  }
+  if (array.length === 0) {
+    return 0;
+  }
+  return (sum(array[0]) + sum(array.slice(1,array.length)));
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
